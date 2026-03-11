@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+
+const siteData = await getCollection("site");
+const aboutData = siteData.find((entry) => entry.id === "about");
+const about = aboutData?.data.about!;
+---
+
+<section id="om-oss" class="bg-white py-20 md:py-28">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center">
+      {about.heading}
+    </h2>
+    <div class="mt-8 max-w-3xl mx-auto">
+      {
+        about.text.split("\n\n").map((paragraph: string) => (
+          <p class="mt-4 text-slate-600 text-lg leading-relaxed first:mt-0">
+            {paragraph}
+          </p>
+        ))
+      }
+    </div>
+  </div>
+</section>

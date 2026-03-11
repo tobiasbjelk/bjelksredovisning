@@ -1,0 +1,25 @@
+[
+  {
+    "id": "hero",
+    "hero": {
+      "heading": "Trygg redovisning för ditt företag",
+      "tagline": "Vi hjälper småföretag och enskilda firmor med bokföring, deklarationer och ekonomisk rådgivning. Låt oss ta hand om siffrorna så att du kan fokusera på det du gör bäst."
+    }
+  },
+  {
+    "id": "about",
+    "about": {
+      "heading": "Om oss",
+      "text": "Bjelksredovisning är en redovisningsbyrå som erbjuder personlig och professionell service till småföretag och enskilda firmor. Med mångårig erfarenhet inom bokföring och redovisning kan vi erbjuda skräddarsydda lösningar som passar just ditt företag.\n\nVi tror på nära relationer med våra kunder och arbetar alltid för att göra ekonomin enkel och begriplig. Hos oss får du en dedikerad kontaktperson som lär känna ditt företag och kan ge dig bästa möjliga råd.\n\nVårt kontor ligger centralt och vi tar emot kunder både på plats och digitalt. Vi använder moderna verktyg och system för att göra samarbetet smidigt och effektivt."
+    }
+  },
+  {
+    "id": "contact",
+    "contact": {
+      "heading": "Kontakt",
+      "phone": "070-123 45 67",
+      "email": "info@bjelksredovisning.se",
+      "address": "Storgatan 12, 123 45 Stockholm"
+    }
+  }
+]

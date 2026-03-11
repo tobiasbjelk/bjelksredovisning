@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+
+const siteData = await getCollection("site");
+const heroData = siteData.find((entry) => entry.id === "hero");
+const hero = heroData?.data.hero!;
+---
+
+<section id="hem" class="relative overflow-hidden bg-white">
+  <div class="absolute inset-0 bg-gradient-to-br from-brand-light to-white"></div>
+  <div class="relative mx-auto max-w-6xl px-4 py-24 md:py-32 lg:py-40">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 max-w-3xl leading-tight">
+      {hero.heading}
+    </h1>
+    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+      {hero.tagline}
+    </p>
+    <div class="mt-8">
+      <a
+        href="#kontakt"
+        class="inline-block rounded-lg bg-brand-accent px-6 py-3 font-semibold text-white hover:bg-brand-accent-dark transition-colors"
+      >
+        Kontakta oss
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent"></div>
+</section>
