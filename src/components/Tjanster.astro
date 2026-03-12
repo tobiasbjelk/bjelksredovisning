@@ -11,23 +11,33 @@ const renderedServices = await Promise.all(
     return { ...service, Content };
   }),
 );
+
+const iconMap: Record<string, string> = {
+  bokforing: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h6"/><path d="M8 11h4"/></svg>`,
+  deklarationer: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>`,
+  radgivning: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+};
 ---
 
 <section id="tjanster" class="bg-brand-light py-20 md:py-28">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 text-center" data-animate>
       Våra tjänster
     </h2>
-    <p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto text-lg">
+    <p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto text-lg" data-animate>
       Vi erbjuder ett brett utbud av redovisningstjänster anpassade för småföretag.
     </p>
     <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
-        renderedServices.map(({ data, Content }) => (
-          <div class="group flex flex-col rounded-xl bg-white p-8 shadow-sm hover:shadow-md transition-all border border-slate-100 hover:border-brand-accent/30">
-            <span class="text-4xl" role="img" aria-hidden="true">
-              {data.icon}
-            </span>
+        renderedServices.map(({ data, Content }, i) => (
+          <div
+            class="group flex flex-col rounded-xl bg-white p-8 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all border border-slate-100 hover:border-brand-accent/30"
+            data-animate
+            style={`transition-delay: ${i * 100}ms`}
+          >
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-light text-brand-accent">
+              <Fragment set:html={iconMap[data.icon] || ""} />
+            </div>
             <h3 class="mt-4 text-xl font-semibold text-slate-900">
               {data.title}
             </h3>

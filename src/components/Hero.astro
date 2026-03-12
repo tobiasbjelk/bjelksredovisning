@@ -9,18 +9,19 @@ const hero = heroData?.data.hero!;
 <section id="hem" class="relative overflow-hidden bg-white">
   <div class="absolute inset-0 bg-gradient-to-br from-brand-light to-white"></div>
   <div class="relative mx-auto max-w-6xl px-4 py-24 md:py-32 lg:py-40">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 max-w-3xl leading-tight">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 max-w-3xl leading-tight" data-animate>
       {hero.heading}
     </h1>
-    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed" data-animate>
       {hero.tagline}
     </p>
-    <div class="mt-8">
+    <div class="mt-8" data-animate>
       <a
         href="#kontakt"
-        class="inline-block rounded-lg bg-brand-accent px-6 py-3 font-semibold text-white hover:bg-brand-accent-dark transition-colors"
+        class="cta-button group inline-flex items-center gap-2 rounded-lg bg-brand-accent px-6 py-3 font-semibold text-white hover:bg-brand-accent-dark hover:shadow-lg hover:scale-[1.02] transition-all"
       >
         Kontakta oss
+        <span class="inline-block transition-transform group-hover:translate-x-1">&rarr;</span>
       </a>
     </div>
   </div>

@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Swedish accounting firm ("Bjelksredovisning") single-page marketing website. All content is in Swedish.
 
+## Deployment
+
+Hosted on Cloudflare Pages. Pushing to `main` on GitHub triggers an automatic production deploy.
+
 ## Commands
 
 - `npm run dev` — dev server at localhost:4321
@@ -28,7 +32,7 @@ Single-page site with anchor-based navigation (#hem, #tjanster, #om-oss, #kontak
 Uses Astro Content Collections (`src/content.config.ts`) with two collections:
 
 - **`site`** — loaded from `src/data/site.json` (a JSON array). Contains hero, about, and contact data as separate entries keyed by `id`. Components look up entries by id (e.g., `siteData.find(entry => entry.id === "hero")`).
-- **`tjanster`** — loaded via glob from `src/data/tjanster/*.md`. Each markdown file has frontmatter: `title`, `description`, `icon` (emoji), `order` (number for sorting). Sorted by `order` in the Tjanster component.
+- **`tjanster`** — loaded via glob from `src/data/tjanster/*.md`. Each markdown file has frontmatter: `title`, `description`, `icon` (string key mapped to SVG in Tjanster.astro), `order` (number for sorting). Sorted by `order` in the Tjanster component.
 
 ### Custom Theme Colors
 
@@ -43,4 +47,9 @@ Defined in `src/styles/global.css` using Tailwind 4 `@theme` directive:
 
 ### Client-Side JS
 
-Minimal — only the mobile hamburger menu toggle in `Navbar.astro` (inline `<script>` tag).
+Minimal — mobile hamburger menu toggle in `Navbar.astro` and `IntersectionObserver` for scroll animations in `Layout.astro` (both inline `<script>` tags).
+
+## Git & GitHub
+
+- Use `gh` CLI for GitHub operations
+- Minimalist commit messages

@@ -1,7 +1,7 @@
 ---
 title: "Deklarationer"
 description: "Vi hjälper dig med alla typer av deklarationer, från inkomstdeklaration till momsredovisning. Slipp stressen och låt oss ta hand om det."
-icon: "\U0001F4CB"
+icon: "deklarationer"
 order: 2
 ---
 

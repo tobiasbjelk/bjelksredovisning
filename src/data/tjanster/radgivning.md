@@ -1,7 +1,7 @@
 ---
 title: "Ekonomisk rådgivning"
 description: "Behöver du hjälp att fatta rätt ekonomiska beslut? Vi erbjuder personlig rådgivning anpassad efter dina behov och mål."
-icon: "\U0001F4C8"
+icon: "radgivning"
 order: 3
 ---
 

@@ -20,7 +20,7 @@ const links = [
           <li>
             <a
               href={link.href}
-              class="text-slate-600 hover:text-brand-accent-dark transition-colors font-medium"
+              class="nav-link relative text-slate-600 hover:text-brand-accent-dark transition-colors font-medium"
             >
               {link.label}
             </a>
@@ -60,6 +60,23 @@ const links = [
     </ul>
   </div>
 </nav>
+
+<style>
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-brand-accent);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
 
 <script>
   const toggle = document.getElementById("menu-toggle")!;
